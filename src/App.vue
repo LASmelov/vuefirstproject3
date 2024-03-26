@@ -6,27 +6,46 @@ import insideandslider from './components/insideandslider.vue';
 import flashsales from './components/flashsales.vue';
 
 import cardsData from './components/Data/cardsData.js'
+import cardsCategory from './components/Data/cardsCategory.js'
+import Category from './components/Category.vue';
+
+import { RouterView } from 'vue-router';
+import FooterBlock from './components/FooterBlock.vue';
 </script>
 
 <template>
   <header>
-   
+
     <div>
-  <sales/>
+      <sales />
     </div>
-    <div>
-  <headerblock />
+    <div class="headerblock">
+      <headerblock />
     </div>
   </header>
 
-  <main>
-    <insideandslider/>
-    <flashsales :cardsData="cardsData" />
+  <main class="mainblock">
+    <RouterView />
   </main>
 
   <footer>
-
+    <FooterBlock />
   </footer>
 </template>
 
-./components/Data/cardsData.vue./components/Data/cardsData.js
+
+<style scoped>
+.headerblock {
+  margin: 0 auto;
+  max-width: 1170px;
+  padding: 0 10px;
+}
+
+.mainblock {
+  margin: 0 auto;
+  max-width: 1170px;
+  padding: 0 10px;
+}
+</style>
+
+
