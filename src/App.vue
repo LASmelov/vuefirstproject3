@@ -2,12 +2,12 @@
 import sales from './components/sales.vue';
 
 import headerblock from './components/headerblock.vue';
-import insideandslider from './components/insideandslider.vue';
-import flashsales from './components/flashsales.vue';
+// import insideandslider from './components/insideandslider.vue';
+// import flashsales from './components/flashsales.vue';
 
-import cardsData from './components/Data/cardsData.js'
-import cardsCategory from './components/Data/cardsCategory.js'
-import Category from './components/Category.vue';
+// import cardsData from './components/Data/cardsData.js'
+// import cardsCategory from './components/Data/cardsCategory.js'
+// import Category from './components/Category.vue';
 
 import { RouterView } from 'vue-router';
 import FooterBlock from './components/FooterBlock.vue';

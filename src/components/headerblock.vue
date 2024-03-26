@@ -24,7 +24,7 @@
 
             <div class="flex flex-row gap-5 mx-5">
                 <img class="w-[32] h-[32px]" src="./img/Vector-3.png" alt="like">
-                <img class="w-[32] h-[32px]" src="./img/Cart1.png" alt="korzina">
+                <RouterLink to="/ShoppingCart"><img class="w-[32] h-[32px]" src="./img/Cart1.png" alt="korzina"></RouterLink>
             </div>
         </section>
     </section>

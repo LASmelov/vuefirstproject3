@@ -34,12 +34,15 @@
         <swiper :modules="modules" :slides-per-view="6" :space-between="50" @swiper="onSwiper">
 
             <swiper-slide v-for="(card, index) in cardsCategory" :key="index">
+                 <RouterLink to ="#">
                 <div class="w-[170px] h-[140px] flex items-center justify-center flex-col gap-4 border rounded-sm"
-                    @click="() => activeListItem(index)" :class="{ 'bg-[#DB4444]': activeLi === index }">
+                @click="() => activeListItem(index)" :class="{ 'bg-[#DB4444]': activeLi === index }">
+                   
                     <img :src="card.img" :alt="card.название" />
                     <h5 class="font-bold">{{ card.название }}</h5>
-
+               
                 </div>
+             </RouterLink>
             </swiper-slide>
 
 
@@ -73,6 +76,7 @@
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import { ref } from 'vue';
+import { RouterLink } from 'vue-router';
 
 
 

@@ -27,12 +27,12 @@
 
         <div class="flex items-center justify-around mb-[10%]">
             <div v-for="(card, index) in cardsSelling" :key="index">
-
+                <RouterLink to ="#">
                 <img :src="card.img" :alt="card.название" />
                 <h5 class="font-bold">{{ card.название }}</h5>
                 <p class="text-red-500">$ {{ card.цена }} </p>
                 <p>Рейтинг: {{ card.рейтинг }} звезд</p>
-
+               </RouterLink>
             </div>
         </div>
 
@@ -41,10 +41,12 @@
         <div v-if="showBlock">
             <div class="flex flex-wrap items-center justify-between mb-10 gap-[40px]">
                 <div v-for="(card, index) in cardsData" :key="index">
+                    <RouterLink to ="#">
                     <img :src="card.img" :alt="card.название" />
                     <h5 class="font-bold">{{ card.название }}</h5>
                     <p class="text-red-500">$ {{ card.цена }} </p>
                     <p>Рейтинг: {{ card.рейтинг }} звезд</p>
+                    </RouterLink>
                 </div>
             </div>
         </div>

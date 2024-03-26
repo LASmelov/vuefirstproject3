@@ -26,6 +26,12 @@ const router = createRouter({
             component: () => import('@/pages/SignUpPage.vue')
         },
 
+        {
+            path: '/ShoppingCart',
+            name: 'Корзина',
+            component: () => import('@/pages/SecondPage.vue')
+        },
+
 
 
 

@@ -128,13 +128,21 @@
     <swiper :modules="modules" :slides-per-view="4" :space-between="50" @swiper="onSwiper">
 
       <swiper-slide v-for="(card, index) in cardsData" :key="index">
-        <div>
+        
+        <div class='mb-[20%] flex items-center justify-center'>
+          <RouterLink to ="#">
           <img :src="card.img" :alt="card.название" />
           <h5 class="font-bold">{{ card.название }}</h5>
           <p class="text-red-500">$ {{ card.цена }} </p>
           <p>Рейтинг: {{ card.рейтинг }} звезд</p>
-
+          <div class="border w-[100%] h-[30px] bg-red-500 rounded-xl flex flex-col">
+                        <button @click="addToCart(card)" class="text-white">Buy</button>
+                    </div>
+          </RouterLink>
+        
         </div>
+        
+     
       </swiper-slide>
 
 
@@ -149,10 +157,16 @@
     <div v-if="showBlock">
       <div class="flex flex-wrap items-center justify-between mb-10 gap-[40px]">
         <div v-for="(card, index) in cardsData" :key="index">
+          <RouterLink to ="#">
           <img :src="card.img" :alt="card.название" />
           <h5 class="font-bold">{{ card.название }}</h5>
           <p class="text-red-500">$ {{ card.цена }} </p>
           <p>Рейтинг: {{ card.рейтинг }} звезд</p>
+      
+          <div class="border w-[100%] h-[30px] bg-red-500 rounded-xl flex flex-col">
+                        <button @click="addToCart(card)" class="text-white">Buy</button>
+                    </div>
+                    </RouterLink>
         </div>
       </div>
     </div>
@@ -504,6 +518,7 @@ body {
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import { ref } from 'vue';
+import { useCartStore } from '@/store/CartStore';
 
 
 defineProps({
@@ -524,5 +539,7 @@ function toggleBlock() {
   showBlock.value = !showBlock.value
 }
 
-
+function addToCart(item) {
+    useCartStore().addProductToCart(item);
+}
 </script>
